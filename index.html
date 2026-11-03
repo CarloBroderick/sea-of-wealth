@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A Sea of Wealth by Ben Halpern — a bold, hopeful exploration of the blue economy and the future of the ocean." />
+    <meta name="theme-color" content="#102f3d" />
+    <title>A Sea of Wealth — Ben Halpern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="content.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="pin-gate.js" defer></script>
+  </head>
+  <body>
+    <div class="pin-gate" id="pin-gate">
+      <div class="pin-gate-card">
+        <h1>A Sea of Wealth</h1>
+        <p>Private preview. Enter the PIN to continue.</p>
+        <form class="pin-gate-form" id="pin-gate-form" autocomplete="off">
+          <input id="pin-gate-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="8" placeholder="PIN" aria-label="PIN" />
+          <button type="submit">Enter</button>
+        </form>
+        <div class="pin-gate-error" id="pin-gate-error" role="alert"></div>
+      </div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="A Sea of Wealth home">
+        <span>A Sea of Wealth</span>
+        <small>Ben Halpern</small>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span><span></span><span></span><span class="sr-only">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#book">The book</a>
+        <a href="#ideas">Five ideas</a>
+        <a href="#events">Events</a>
+        <a href="#press">Press</a>
+        <a href="#author">About Ben</a>
+        <a class="nav-cta" href="#preorder">Preorder</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-photo" role="img" aria-label="Top-down aerial view of fishing nets on the open ocean"></div>
+        <div class="hero-wash"></div>
+        <div class="hero-inner shell">
+          <div class="cover-wrap reveal">
+            <img class="book-cover" src="assets/book-cover.webp" width="987" height="1500" alt="Book cover for A Sea of Wealth by Ben Halpern" />
+            <span class="release-tag">Available March 16, 2027</span>
+          </div>
+          <div class="hero-copy reveal">
+            <p class="eyebrow">A new book by Ben Halpern</p>
+            <h1 id="hero-title">The ocean can sustain us.<br /><em>Can we use it wisely?</em></h1>
+            <p class="hero-deck">A bold, hopeful journey through the blue economy—and a practical case for meeting human needs without sacrificing the health of the sea.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#preorder">Preorder the book</a>
+              <a class="text-link" href="#book">Explore the story <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#question" aria-label="Scroll to learn more"><span></span>Explore</a>
+      </section>
+
+      <section class="question section" id="question">
+        <div class="narrow reveal">
+          <p class="eyebrow dark">The question at the heart of the book</p>
+          <h2>Should we halt the use of the ocean’s resources—or learn to use them better?</h2>
+          <p>Humanity needs food, clean energy, transport, minerals, and ways to manage carbon. The ocean may help provide all five. <em>A Sea of Wealth</em> asks what each opportunity offers, what it risks, and how we can make choices that work for people and the planet.</p>
+        </div>
+      </section>
+
+      <section class="ideas section" id="ideas" aria-labelledby="ideas-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow dark">Five uses of the sea</p>
+              <h2 id="ideas-title">One ocean. Five defining choices.</h2>
+            </div>
+            <p>From familiar industries to emerging technologies, each path carries both promise and consequence.</p>
+          </div>
+          <div class="idea-grid">
+            <article class="idea-card image-card food reveal">
+              <div><span>01</span><h3>Food</h3><p>Can the sea nourish a growing world without exhausting itself?</p></div>
+            </article>
+            <article class="idea-card image-card energy reveal">
+              <div><span>02</span><h3>Energy</h3><p>What can offshore wind and other ocean power deliver?</p></div>
+            </article>
+            <article class="idea-card image-card transport reveal">
+              <div><span>03</span><h3>Transport</h3><p>How do we move global trade while shrinking its footprint?</p></div>
+            </article>
+            <article class="idea-card color-card minerals reveal">
+              <div><span>04</span><h3>Minerals</h3><p>Where should we draw the line on resources beneath the waves?</p></div>
+            </article>
+            <article class="idea-card image-card carbon reveal">
+              <div><span>05</span><h3>Carbon</h3><p>Could ocean-based solutions help rebalance the climate?</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="immersive" aria-label="Top-down aerial view of a small fishing boat on open water">
+        <div class="immersive-shade"></div>
+        <div class="immersive-copy reveal">
+          <p>“The answer is not to leave the ocean untouched. It is to understand what wise use truly requires.”</p>
+          <span>— The central challenge of <em>A Sea of Wealth</em></span>
+        </div>
+      </section>
+
+      <section class="book section" id="book" aria-labelledby="book-title">
+        <div class="shell book-layout">
+          <div class="book-image reveal">
+            <img src="assets/book-cover.webp" width="987" height="1500" alt="A Sea of Wealth book cover" loading="lazy" />
+          </div>
+          <div class="book-copy reveal">
+            <p class="eyebrow dark">About the book</p>
+            <h2 id="book-title">A hopeful argument for a thriving blue economy.</h2>
+            <p class="lead">As governments and companies rush toward the blue expanse covering two-thirds of our planet, Ben Halpern asks not simply whether we should use the ocean—but how.</p>
+            <p>Blending cutting-edge science with personal stories from a life spent in and around the sea, Halpern travels the globe to investigate food, energy, transport, minerals, and carbon. He weighs their potential against their environmental risks and compares them with the choices we already make on land.</p>
+            <p>The result is a clear-eyed, surprising case for approaching the ocean not as an untouched wilderness or an unlimited storehouse, but as a living system whose future depends on wiser decisions now.</p>
+            <dl class="book-facts">
+              <div><dt>Published by</dt><dd>Princeton University Press</dd></div>
+              <div><dt>Release</dt><dd>March 16, 2027</dd></div>
+              <div><dt>Length</dt><dd>272 pages</dd></div>
+              <div><dt>ISBN</dt><dd>978-0-691-27565-9</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="updates section" id="events" aria-labelledby="events-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="eyebrow dark">Book tour</p><h2 id="events-title">Come join the conversation.</h2></div>
+            <p>Talks, readings, and discussions will be posted here as they are announced.</p>
+          </div>
+          <div class="update-list" data-events></div>
+        </div>
+      </section>
+
+      <section class="press section" id="press" aria-labelledby="press-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div><p class="eyebrow light">Press &amp; reviews</p><h2 id="press-title">The conversation is just beginning.</h2></div>
+            <p>Reviews, interviews, excerpts, and media coverage will collect here.</p>
+          </div>
+          <div class="press-grid" data-press></div>
+        </div>
+      </section>
+
+      <section class="author section" id="author" aria-labelledby="author-title">
+        <div class="shell author-layout">
+          <div class="author-mark reveal"><img src="assets/ben-halpern.webp" width="1024" height="683" alt="Portrait of Ben Halpern" loading="lazy" /></div>
+          <div class="author-copy reveal">
+            <p class="eyebrow dark">About the author</p>
+            <h2 id="author-title">Ben Halpern</h2>
+            <p class="lead">Marine biologist, conservation scientist, and one of the world’s leading thinkers on the relationship between people and the ocean.</p>
+            <p>Ben Halpern is professor of marine biology and conservation science at the University of California, Santa Barbara, and executive director of the National Center for Ecological Analysis and Synthesis. His research has appeared in <em>Nature</em>, <em>Science</em>, and <em>Scientific American</em>, and his work is regularly featured by NPR, the BBC, and other major media outlets.</p>
+            <div class="author-links"><a href="https://www.nceas.ucsb.edu/about-us/our-people" target="_blank" rel="noreferrer">NCEAS <span aria-hidden="true">↗</span></a><a href="https://bren.ucsb.edu/people/ben-halpern" target="_blank" rel="noreferrer">Bren School <span aria-hidden="true">↗</span></a><a href="https://scholar.google.com/citations?user=6XVuz14AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/benjamin-halpern-56995b138" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="preorder section" id="preorder" aria-labelledby="preorder-title">
+        <div class="shell preorder-layout">
+          <div class="preorder-cover reveal"><img src="assets/book-cover.webp" width="987" height="1500" alt="A Sea of Wealth book cover" loading="lazy" /></div>
+          <div class="preorder-copy reveal">
+            <p class="eyebrow light">Available March 16, 2027</p>
+            <h2 id="preorder-title">Start seeing the ocean differently.</h2>
+            <p>Preorder <em>A Sea of Wealth</em> from your preferred bookseller.</p>
+            <div class="retailer-links" data-retailers></div>
+            <small>Retailer prices and availability may vary.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div><strong>A Sea of Wealth</strong><p>The Blue Economy and the Future of the Ocean</p></div>
+        <div><strong>Explore</strong><a href="#book">The book</a><a href="#events">Events</a><a href="#press">Press</a></div>
+        <div><strong>Connect</strong><a href="https://press.princeton.edu/books/hardcover/9780691275659/a-sea-of-wealth" target="_blank" rel="noreferrer">Princeton University Press</a><a href="#author">About Ben</a></div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© <span data-year></span> Ben Halpern</span>
+        <button type="button" class="credit-toggle" aria-expanded="false" aria-controls="photo-credits" data-credit-toggle>Photo credits</button>
+      </div>
+      <div class="photo-credits shell" id="photo-credits" hidden data-credits>
+        <p>All photography is top-down aerial, sourced from Unsplash (free license): fishing-net pattern, circular fish farms, container ship, offshore construction vessel, and a seaweed farm. Full source links and photographer credits are in the included image guide.</p>
+      </div>
+    </footer>
+  </body>
+</html>
