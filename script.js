@@ -1,7 +1,7 @@
 (() => {
   const previewSection = new URLSearchParams(window.location.search).get("preview-section");
   if (previewSection) window.addEventListener("load", () => setTimeout(() => document.getElementById(previewSection)?.scrollIntoView(), 250));
-  const content = window.SEA_OF_WEALTH || { retailers: [], events: [], press: [] };
+  const content = window.SEA_OF_WEALTH || { retailers: [], secondaryRetailers: [], events: [], press: [], praise: [] };
   const header = document.querySelector("[data-header]");
   const nav = document.querySelector("[data-nav]");
   const navToggle = document.querySelector("[data-nav-toggle]");
@@ -15,8 +15,10 @@
     const container = document.querySelector("[data-retailers]");
     if (!container) return;
     container.innerHTML = content.retailers.map((item, index) =>
-      `<a class="retailer-button ${index === 0 ? "featured" : ""}" href="${item.url}" target="_blank" rel="noreferrer">${item.label}<span aria-hidden="true">↗</span></a>`
+      `<a class="retailer-button ${index === 0 ? "featured" : ""}" href="${item.url}" target="_blank" rel="noreferrer"><span><strong>${item.region}</strong>${item.label}${item.note ? `<small>${item.note}</small>` : ""}</span><span aria-hidden="true">↗</span></a>`
     ).join("");
+    const secondary = document.querySelector("[data-secondary-retailers]");
+    if (secondary) secondary.innerHTML = `Also available via ${content.secondaryRetailers.map((item) => `<a href="${item.url}" target="_blank" rel="noreferrer">${item.label}</a>`).join(", ")}.`;
   };
 
   const formatDate = (date) => new Intl.DateTimeFormat("en-US", {
@@ -39,14 +41,17 @@
   };
 
   const renderPress = () => {
+    const praise = document.querySelector("[data-praise]");
+    if (praise) praise.innerHTML = content.praise.map((item) => `
+      <article class="praise-card reveal">
+        <blockquote>“${item.quote}”</blockquote>
+        <p>—${item.attribution}</p>
+      </article>`).join("");
     const container = document.querySelector("[data-press]");
     if (!container) return;
     if (!content.press.length) {
       container.removeAttribute("data-snap");   // placeholders stack on a phone; real coverage swipes
-      container.innerHTML = `
-        <div class="press-placeholder reveal"><span>Reviews</span><p>Critical responses and book reviews will appear here.</p></div>
-        <div class="press-placeholder reveal"><span>Conversations</span><p>Interviews and podcasts will appear here.</p></div>
-        <div class="press-placeholder reveal"><span>Excerpts</span><p>Selected writing and adapted excerpts will appear here.</p></div>`;
+      container.innerHTML = `<div class="press-placeholder reveal"><span>Conversations</span><p>Interviews, podcasts, and media coverage will appear here as they are published.</p></div>`;
       return;
     }
     container.innerHTML = content.press.map((item) => `

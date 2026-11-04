@@ -14,21 +14,21 @@ Then open <http://127.0.0.1:4173/>.
 
 ## Updating events and press
 
-Edit `content.js`. Events and coverage are arrays of small records, deliberately kept separate from the layout so a future Slack-to-site bot has one predictable file to update.
+Edit `content.js`. Retailer links, endorsement blurbs, events, and coverage are small records kept separate from the layout so a future Slack-to-site bot has one predictable file to update.
 
-No events, reviews, quotes, or endorsements have been invented. Empty sections show intentional "coming soon" states until real content is added.
+No events, editorial reviews, or media coverage have been invented. The endorsement blurbs are copied from Princeton University Press; empty dynamic sections show intentional "coming soon" states until real content is added.
 
 ## Structure
 
 - `index.html` — home page.
-- `book.html` — book overview and five ocean-use themes.
+- `book.html` — concise book overview and publication details.
 - `events.html` — tour dates rendered from `content.js`.
 - `press.html` — reviews and coverage rendered from `content.js`.
 - `author.html` — author biography and profile links.
 - `preorder.html` — retailer links rendered from `content.js`.
 - `styles.css` — responsive visual system.
 - `script.js` — menu, content rendering, photo credits, and restrained reveal behavior.
-- `content.js` — retailers, events, and press data.
+- `content.js` — regional retailers, endorsement blurbs, events, and press data.
 - `assets/` — locally packaged cover and licensed ocean photographs.
 - `stock-image-options.md` — selected and alternate image directions with licenses and source links.
 

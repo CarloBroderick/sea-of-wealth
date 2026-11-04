@@ -221,7 +221,9 @@ body[data-page="press"] main { background: var(--navy); }
 .event-row time { grid-column: 1 / -1; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 .press-placeholder, .press-card { min-height: 170px; padding: 1.3rem; border-radius: var(--radius); }
 /* before any coverage exists: three short stacked rows, not a carousel of empty cards */
-.press-grid:not([data-snap]) { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.press-grid:not([data-snap]), .praise-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.praise-card { padding: 1.3rem; }
+.praise-card blockquote { font-size: 1.1rem; }
 .press-placeholder { min-height: 0; padding: 1rem 1.1rem; justify-content: flex-start; }
 .press-placeholder p { margin-top: 0.35rem; font-size: 0.92rem; }
 .press-card h3 { font-size: 1.4rem; }
@@ -260,8 +262,6 @@ body[data-page="press"] main { background: var(--navy); }
   text-decoration: none;
 }
 .author-links a:last-child { border-bottom: 0; }
-.author-book-link { min-height: 48px; }
-
 /* preorder: cover beside the title, then one big row per bookseller */
 .preorder-full { min-height: 0; padding: 2rem 0 2.6rem; }
 .preorder-layout { display: grid; grid-template-columns: 104px 1fr; gap: 0 1.1rem; align-items: center; }
@@ -271,9 +271,9 @@ body[data-page="press"] main { background: var(--navy); }
 .preorder-copy .eyebrow { grid-column: 2; grid-row: 1; align-self: end; margin: 0 0 0.3rem; }
 .preorder-copy h1 { grid-column: 2; grid-row: 2; align-self: start; margin: 0; font-size: 1.75rem; line-height: 1.08; }
 .preorder-cover { grid-row: 1 / 3; }
-.preorder-copy > p, .retailer-links, .preorder-copy small, .preorder-facts { grid-column: 1 / -1; }
+.preorder-copy > p, .retailer-links, .retailer-secondary, .preorder-copy small, .preorder-facts { grid-column: 1 / -1; }
 .preorder-copy > p { margin: 1.6rem 0 0; }
-.retailer-links { flex-direction: column; gap: 10px; margin: 1rem 0 0.8rem; }
+.retailer-links { grid-template-columns: 1fr; gap: 10px; margin: 1rem 0 0.8rem; }
 .retailer-button { justify-content: space-between; min-height: 58px; padding: 0 1.2rem; border-radius: 14px; font-size: 0.98rem; }
 .preorder-facts { flex-direction: column; gap: 0.9rem; margin-top: 1.6rem; }
 

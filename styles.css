@@ -227,6 +227,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .press-placeholder { display: flex; flex-direction: column; justify-content: end; background: rgba(255,255,255,0.035); }
 .press-placeholder span, .press-card > span { color: var(--sand); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .press-placeholder p { margin: 0.8rem 0 0; color: rgba(255,255,255,0.64); }
+.praise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.praise-card { padding: 1.8rem; color: var(--deep); background: rgba(255,255,255,0.82); border-radius: 14px; }
+.praise-card blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.15rem, 1.6vw, 1.5rem); line-height: 1.35; }
+.praise-card p { margin: 1.4rem 0 0; color: rgba(16,47,61,0.7); font-size: 0.8rem; font-weight: 700; }
+.coverage-heading { margin-top: clamp(4rem, 8vw, 7rem); }
 .press-card { display: flex; flex-direction: column; text-decoration: none; }
 .press-card h3 { font-size: 1.8rem; }
 .press-card b { margin-top: auto; }
@@ -250,10 +255,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .preorder-copy h2 { margin: 0 0 1.4rem; max-width: 780px; font-size: clamp(3.4rem, 6vw, 6.5rem); letter-spacing: -0.04em; }
 .preorder-copy { min-width: 0; }
 .preorder-copy > p { color: rgba(255,255,255,0.7); }
-.retailer-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 2rem 0 1.5rem; }
-.retailer-button { display: flex; align-items: center; gap: 0.7rem; padding: 0.8rem 1.1rem; border: 1px solid rgba(255,255,255,0.28); border-radius: 999px; text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+.retailer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin: 2rem 0 1rem; }
+.retailer-button { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; border: 1px solid rgba(255,255,255,0.28); border-radius: 14px; text-decoration: none; font-size: 0.92rem; font-weight: 700; }
+.retailer-button span:first-child { display: grid; gap: 0.15rem; }
+.retailer-button strong { color: var(--sand); font-size: 0.68rem; letter-spacing: 0.11em; text-transform: uppercase; }
+.retailer-button.featured strong { color: rgba(7, 86, 109, 0.72); }
+.retailer-button small { color: inherit; font-size: 0.72rem; font-weight: 500; }
 .retailer-button.featured { color: var(--deep); background: var(--coral); border-color: var(--coral); }
 .retailer-button:hover { border-color: rgba(255,255,255,0.7); }
+.retailer-secondary { margin: 0 0 1rem; color: rgba(255,255,255,0.68); font-size: 0.84rem; }
+.retailer-secondary a { color: var(--white); text-underline-offset: 0.2rem; }
 .preorder-copy small { color: rgba(255,255,255,0.45); }
 
 .site-footer { padding: 4rem 0 2rem; color: rgba(255,255,255,0.7); background: #061a23; font-size: 0.82rem; }
@@ -289,7 +300,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-dark { margin-top: 2rem; color: var(--white); background: var(--deep); }
 .author-page { min-height: calc(100svh - 72px); padding-top: clamp(7rem, 11vw, 11rem); }
 .author-page .author-copy h1 { margin: 0 0 1.5rem; color: var(--deep); font-family: var(--display); font-size: clamp(4rem, 7vw, 7rem); font-weight: 500; line-height: 1; }
-.author-book-link { margin-top: 2rem; }
 .preorder-full { min-height: calc(100svh - 72px); display: grid; align-items: center; }
 .preorder-copy h1 { margin: 0 0 1.4rem; max-width: 780px; font-family: var(--display); font-size: clamp(4rem, 7vw, 7rem); font-weight: 500; line-height: 1; letter-spacing: -.04em; }
 .preorder-facts { display: flex; gap: 3rem; margin: 2.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.18); }
