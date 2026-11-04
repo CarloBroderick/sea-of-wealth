@@ -8,6 +8,8 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const currentPage = document.body.dataset.page;
   document.querySelector(`[data-nav-page="${currentPage}"]`)?.setAttribute("aria-current", "page");
+  // the phone site's tab bar and Preorder button (mobile.css)
+  document.querySelectorAll(`[data-m-page="${currentPage}"]`).forEach((el) => el.setAttribute("aria-current", "page"));
 
   const renderRetailers = () => {
     const container = document.querySelector("[data-retailers]");
@@ -40,6 +42,7 @@
     const container = document.querySelector("[data-press]");
     if (!container) return;
     if (!content.press.length) {
+      container.removeAttribute("data-snap");   // placeholders stack on a phone; real coverage swipes
       container.innerHTML = `
         <div class="press-placeholder reveal"><span>Reviews</span><p>Critical responses and book reviews will appear here.</p></div>
         <div class="press-placeholder reveal"><span>Conversations</span><p>Interviews and podcasts will appear here.</p></div>
@@ -82,6 +85,26 @@
   renderPress();
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
+
+  // phone swipe rows ([data-snap], mobile.css): one dot per card under the row, the one in view lit
+  const addDots = (row) => {
+    const cards = Array.from(row.children);
+    if (cards.length < 2) return;
+    const dots = document.createElement("div");
+    dots.className = "m-dots";
+    dots.setAttribute("aria-hidden", "true");
+    cards.forEach(() => dots.appendChild(document.createElement("span")));
+    row.after(dots);
+    const paint = () => {
+      const step = cards[1].offsetLeft - cards[0].offsetLeft || 1;
+      const at = Math.min(cards.length - 1, Math.round(row.scrollLeft / step));
+      dots.querySelectorAll("span").forEach((dot, i) => dot.classList.toggle("on", i === at));
+    };
+    row.addEventListener("scroll", paint, { passive: true });
+    window.addEventListener("resize", paint);
+    paint();
+  };
+  document.querySelectorAll("[data-snap]").forEach(addDots);
 
   const reveals = document.querySelectorAll(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {

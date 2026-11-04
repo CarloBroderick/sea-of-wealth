@@ -314,83 +314,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .carbon { grid-column: span 12; }
 }
 
-@media (max-width: 760px) {
-  :root { --shell: calc(100vw - 36px); }
-  body { font-size: 16px; }
-  .section { padding: 5.5rem 0; }
-  .page-hero-copy { width: 100%; min-width: 0; }
-  .page-hero h1 { max-width: 100%; font-size: clamp(3rem, 13vw, 4rem); overflow-wrap: break-word; }
-  .page-hero-copy > p:last-child { max-width: 100%; font-size: 1rem; }
-  .page-card-grid { grid-template-columns: 1fr; }
-  .site-header { padding: 0.85rem 18px; }
-  .site-header.scrolled { padding: 0.7rem 18px; }
-  .wordmark span { font-size: 1.05rem; }
-  .nav-toggle {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    padding: 7px;
-    color: var(--white);
-    background: rgba(5, 28, 38, 0.58);
-    border-radius: 50%;
-    backdrop-filter: blur(8px);
-    z-index: 2;
-  }
-  .nav-toggle span:not(.sr-only) { grid-column: 1; grid-row: 1; margin: 0; transform: translateY(-6px); }
-  .nav-toggle span:not(.sr-only):nth-child(2) { transform: none; }
-  .nav-toggle span:not(.sr-only):nth-child(3) { transform: translateY(6px); }
-  .site-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.6rem;
-    background: var(--deep);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 180ms ease;
-  }
-  .site-nav.open { opacity: 1; pointer-events: auto; }
-  .site-nav a, .site-nav a:not(.nav-cta) { display: block; font-family: var(--display); font-size: 2rem; }
-  .nav-cta { color: var(--deep); font-family: var(--sans) !important; font-size: 1rem !important; }
-  .hero-inner { grid-template-columns: 1fr; align-content: center; gap: 2.3rem; padding: 8rem 0 5rem; }
-  .cover-wrap { width: 165px; justify-self: start; margin-left: 0.7rem; }
-  .release-tag { left: -0.7rem; bottom: 0.7rem; width: 150px; padding: 0.5rem 0.7rem; font-size: 0.58rem; }
-  .hero h1 { font-size: clamp(3rem, 13vw, 4.7rem); }
-  .hero-deck { font-size: 1rem; }
-  .hero-actions { align-items: flex-start; flex-direction: column; gap: 1rem; margin-top: 1.6rem; }
-  .scroll-cue { display: none; }
-  .section-heading { align-items: start; flex-direction: column; gap: 1rem; }
-  .section-heading h2 { font-size: 3rem; }
-  .idea-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.6rem; margin-right: -18px; }
-  .idea-card { flex: 0 0 82vw; min-height: 410px; scroll-snap-align: start; }
-  .immersive { min-height: 70svh; }
-  .immersive-copy p { font-size: 3rem; }
-  .book-layout, .author-layout, .preorder-layout { grid-template-columns: 1fr; gap: 3.5rem; }
-  .book-image { max-width: 260px; justify-self: center; }
-  .book-copy h2 { font-size: 3.3rem; }
-  .book-facts { grid-template-columns: 1fr; }
-  .empty-state { align-items: start; flex-direction: column; }
-  .press-grid { grid-template-columns: 1fr; }
-  .press-placeholder { min-height: 190px; }
-  .author-mark { width: min(78vw, 360px); justify-self: center; }
-  .preorder-cover { max-width: 230px; justify-self: center; }
-  .preorder-copy h2 { font-size: 3.4rem; }
-  .retailer-links { align-items: stretch; flex-direction: column; }
-  .retailer-button { justify-content: space-between; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem 1rem; }
-  .footer-grid > div:first-child { grid-column: 1 / -1; }
-  .inner-page { padding-top: 64px; }
-  .page-hero { min-height: 62svh; }
-  .page-hero h1 { font-size: clamp(3.6rem, 16vw, 5.5rem); }
-  .page-card-grid { grid-template-columns: 1fr; }
-  .page-card { min-height: 280px; }
-  .author-page { padding-top: 5.5rem; }
-  .preorder-facts { flex-direction: column; gap: 1rem; }
-}
+/* Phones (max-width 760px) have their own site design in mobile.css, loaded only there. */
+.m-buy, .m-tabs, .m-dots { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
