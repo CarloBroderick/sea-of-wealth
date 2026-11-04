@@ -1,6 +1,6 @@
 # A Sea of Wealth — website prototype
 
-A self-contained static prototype for Ben Halpern's book *A Sea of Wealth: The Blue Economy and the Future of the Ocean*.
+A self-contained, multi-page static prototype for Ben Halpern's book *A Sea of Wealth: The Blue Economy and the Future of the Ocean*.
 
 ## Preview
 
@@ -20,7 +20,12 @@ No events, reviews, quotes, or endorsements have been invented. Empty sections s
 
 ## Structure
 
-- `index.html` — page content and semantic structure.
+- `index.html` — home page.
+- `book.html` — book overview and five ocean-use themes.
+- `events.html` — tour dates rendered from `content.js`.
+- `press.html` — reviews and coverage rendered from `content.js`.
+- `author.html` — author biography and profile links.
+- `preorder.html` — retailer links rendered from `content.js`.
 - `styles.css` — responsive visual system.
 - `script.js` — menu, content rendering, photo credits, and restrained reveal behavior.
 - `content.js` — retailers, events, and press data.

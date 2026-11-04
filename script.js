@@ -6,6 +6,8 @@
   const nav = document.querySelector("[data-nav]");
   const navToggle = document.querySelector("[data-nav-toggle]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const currentPage = document.body.dataset.page;
+  document.querySelector(`[data-nav-page="${currentPage}"]`)?.setAttribute("aria-current", "page");
 
   const renderRetailers = () => {
     const container = document.querySelector("[data-retailers]");
@@ -71,14 +73,15 @@
     credits.hidden = open;
   });
 
-  const onScroll = () => header?.classList.toggle("scrolled", window.scrollY > 24);
+  const onScroll = () => header?.classList.toggle("scrolled", document.body.classList.contains("inner-page") || window.scrollY > 24);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
   renderRetailers();
   renderEvents();
   renderPress();
-  document.querySelector("[data-year]").textContent = new Date().getFullYear();
+  const year = document.querySelector("[data-year]");
+  if (year) year.textContent = new Date().getFullYear();
 
   const reveals = document.querySelectorAll(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {
